@@ -81,6 +81,6 @@ export class TranslateService {
      * @memberof TranslateService
      */
     private getResourcesPath(lang: string): string {
-        return '../i18n/' + lang;
+        return '../assets/i18n/' + lang;
     }
 }

@@ -52,6 +52,7 @@
       "check-preblock"
     ],
     "semicolon": [true, "always"],
-    "quotemark": [true, "single"]
+    "quotemark": [true, "single"],
+    "arrow-parens": false
   }
 }

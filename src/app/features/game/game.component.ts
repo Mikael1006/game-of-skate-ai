@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-    selector: 'Home',
+    selector: 'Game',
     moduleId: module.id,
     template: '<page-router-outlet></page-router-outlet>'
 })
-export class HomeComponent { }
+export class GameComponent { }

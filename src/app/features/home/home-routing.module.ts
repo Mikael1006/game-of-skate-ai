@@ -9,7 +9,7 @@ const routes: Routes = [
         path: '',
         component: HomeComponent,
         children: [
-            { path: '', component: WelcomeComponent }
+            { path: 'welcome', component: WelcomeComponent }
         ]
     }
 ];

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
+import { RouterExtensions } from 'nativescript-angular/router';
+import { map } from 'rxjs/operators';
 import { EventData } from 'tns-core-modules/ui/page/page';
-import { TranslateService } from '~/app/services/translate.service';
 
 @Component({
     selector: 'Welcome',
@@ -11,11 +13,18 @@ export class WelcomeComponent implements OnInit {
 
     private rsc: any;
 
-    constructor(private translate: TranslateService) {
+    constructor(
+        private translate: TranslateService,
+        private routerExtensions: RouterExtensions
+        ) {
     }
 
     ngOnInit(): void {
-        this.rsc = this.translate.get('pages').home;
+        this.rsc = this.translate.get('pages').pipe(map(rsc => {
+            console.log("TRANSLATE :", JSON.stringify(rsc));
+            return rsc.welcome;
+        }));
+        console.log('WELCOME');
     }
 
     /**
@@ -25,5 +34,7 @@ export class WelcomeComponent implements OnInit {
      * @memberof HomeComponent
      */
     onClick(event: EventData) {
+        console.log('NAVIGATE');
+        this.routerExtensions.navigate(['/game/match']);
     }
 }

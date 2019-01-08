@@ -1,5 +1,5 @@
 <AppPage [pageTitle]="rsc.title">
     <GridLayout class="page">
-        <AppButton [label]="rsc.buttons.startNewGame" (click)="onClick($event)"></AppButton>
+        <AppButton [label]="(rsc | async).buttons.startNewGame" (click)="onClick($event)"></AppButton>
     </GridLayout>
 </AppPage>
